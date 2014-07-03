@@ -2,22 +2,24 @@
 <html ng-app="app" ng-controller="appCtrl">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/overide.css">
   </head>
   <body>
     
   <div class="off-canvas-wrap">
     <div class="inner-wrap">
-        <nav class="tab-bar show-for-small">
+        <nav class="tab-bar hide-for-large ">
             <section class="left-small">
                 <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
             </section>
 
             <section class="middle tab-bar-section">
-                <h1 class="title">Devialet</h1>
+                <!-- <h1 class="title">Devialet</h1> -->
+                <a href="" class="logo"><img src="images/logo_small_white.png" alt=""></a>
             </section>
 
             <section class="right-small">
@@ -31,46 +33,70 @@
 
         <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
-                <li><a href="#">Left Sidebar</a></li>
+                <li><a href="#">Systems</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="">Story</a></li>
+                <li><a href="">Store Locator</a></li>
             </ul>
         </aside>
         <aside class="right-off-canvas-menu">
             <ul class="off-canvas-list">
-                <li><a href="#">Right Sidebar</a></li>
+                <li ><a href="#">New Firmware 7.1</a></li>
+                  <li ><a href="#">Configurator</a></li>
+                  <li ><a href="#">Login</a></li>
             </ul>
         </aside>
+
+
         <section class="main-section">
-            <nav class="top-bar" data-topbar>
-              <ul class="title-area">
-                <li class="name">
-                  <h1><a href="#">Something</a></h1>
-                </li>
-                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-              </ul>
-          
-            <section class="top-bar-section">
-              <!-- Right Nav Section -->
-              <ul class="right">
-                <li class="active"><a href="#">Right Nav Button Active</a></li>
-                <li class="has-dropdown">
-                  <a href="#">Right Button with Dropdown</a>
-                  <ul class="dropdown">
-                    <li><a href="#">First link in dropdown</a></li>
-                  </ul>
-                </li>
-              </ul>
-          
-              <!-- Left Nav Section -->
-              <ul class="left">
-                <li><a href="#">Left Nav Button</a></li>
-              </ul>
-            </section>
-          </nav>
-            <div class="small-12 columns">
-                <h1>How to use</h1>
-                <p>Just use the standard layout for an offcanvas page as documented in the <a href="http://foundation.zurb.com/docs/components/offcanvas.html">foundation docs</a></p>
-                <p>As long as you include mm.foundation.offcanvas it should simply work</p>
+
+<div class="fixed">
+            <nav class="top-bar show-for-large" data-topbar>
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  <li ><a href="#">New Firmware 7.1</a></li>
+                  <li ><a href="#">Configurator</a></li>
+                  <li ><a href="#">Login</a></li>
+                  <li class="has-dropdown">
+                    <a href="#">En</a>
+                    <ul class="dropdown">
+                      <li><a href="#">First link in dropdown</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <a href="" class="logo"><img src="images/logo.png" alt=""></a>
+                <!-- Left Nav Section -->
+                <ul class="left">
+                  <li><a href="#">Systems</a></li>
+                  <li><a href="">Technology</a></li>
+                  <li><a href="">Story</a></li>
+                  <li><a href="">Store Locator</a></li>
+                </ul>
+              </section>
+            </nav>
+
+</div>
+
+
+            <div class="row jumbotron home">
+              <div class="large-12 columns ">
+                <h1>this is the new sound</h1>
+                <img src="images/play_video.png" id="play" alt="">
+                <img id="home_hero"src="images/home_devialet.png" alt="">
+              </div>
+
             </div>
+
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h1>Lorem ipsum dolor sit amet, consectetur adip</h1>
+                <p>isicing elit. Magni, cumque, error? Voluptatum labore molestiae dignissimos sed porro ducimus ab, quos quasi modi, inventore rem nisi tenetur id doloribus distinctio blanditiis!</p>
+                <p>orro ducimus ab, quos quasi modi, inventore rem nisi tenetur id doloribus distinctio blanditiis</p>
+            </div>
+
+            </div>
+            
         </section>
 
         <a class="exit-off-canvas"></a>

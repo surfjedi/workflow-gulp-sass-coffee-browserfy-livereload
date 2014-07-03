@@ -38,7 +38,7 @@ jsSources = [
     'components/scripts/*'
 ]
 htmlSources = [outputDir + '*.html']
-sassSources = ['components/sass/*']
+sassSources = ['components/sass/style.scss', 'components/sass/foundation.scss', 'components/sass/foundation/*.scss']
 jsonSources = [outputDir + 'data/*.json']
 
 gulp.task('log', function() {
@@ -101,6 +101,8 @@ gulp.task('watch', function() {
     gulp.watch(coffeeSources, ['coffee']);
     gulp.watch(jsSources, ['js'])
     gulp.watch('components/sass/*.scss', ['compass'])
+    gulp.watch('components/sass/foundation/*.scss', ['compass'])
+    gulp.watch('components/sass/foundation/components/*.scss', ['compass'])
     gulp.watch('builds/development/*.html', ['html'])
     gulp.watch('builds/development/data/*.json', ['json'])
     gulp.watch('builds/development/images/**/*.*', ['images'])
