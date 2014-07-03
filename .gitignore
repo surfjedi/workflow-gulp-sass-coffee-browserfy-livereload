@@ -3,3 +3,4 @@ node_modules
 .DS_Store
 gulp-workflow.sublime-project
 gulp-workflow.sublime-workspace
+bower_components
