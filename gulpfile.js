@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
+    gulpBowerFiles = require('gulp-bower-files'),
     minifyHtml = require('gulp-minify-html'),
     jsonminify = require('gulp-jsonminify'),
     imagemin = require('gulp-imagemin'),
@@ -32,12 +33,12 @@ if (env === 'development') {
     sassStyle = 'compressed';
 }
 
-coffeeSources = ['components/coffee/tagline.coffee'];
+coffeeSources = ['components/coffee/*.coffee'];
 jsSources = [
     'components/scripts/*'
 ]
 htmlSources = [outputDir + '*.html']
-sassSources = ['components/sass/style.scss']
+sassSources = ['components/sass/*']
 jsonSources = [outputDir + 'data/*.json']
 
 gulp.task('log', function() {
@@ -61,6 +62,20 @@ gulp.task('js', function() {
         .pipe(gulp.dest(outputDir + 'js'))
         .pipe(connect.reload())
 });
+
+
+gulp.task("bower-files", function() {
+    gulpBowerFiles({
+            paths: {
+                bowerDirectory: './bower_components',
+                bowerJson: 'bower.json'
+            }
+        }
+
+    ).pipe(gulp.dest("builds/development/js"));
+});
+
+
 
 gulp.task('compass', function() {
     gulp.src(sassSources)
@@ -89,6 +104,7 @@ gulp.task('watch', function() {
     gulp.watch('builds/development/*.html', ['html'])
     gulp.watch('builds/development/data/*.json', ['json'])
     gulp.watch('builds/development/images/**/*.*', ['images'])
+    gulp.watch('bower_components/*', ['bower-files'])
 
 })
 
@@ -120,4 +136,4 @@ gulp.task('json', function() {
         .pipe(connect.reload())
 })
 
-gulp.task('default', ['html', 'json', 'coffee', 'js', 'compass', 'images', 'connect', 'watch'])
+gulp.task('default', ['html', 'json', 'coffee', 'js', 'bower-files', 'compass', 'images', 'connect', 'watch'])
