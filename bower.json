@@ -1,0 +1,27 @@
+{
+    "name": "devialet_project",
+    "version": "0.0.0",
+    "homepage": "https://github.com/surfjedi/workflow-gulp-sass-coffee-browserfy-livereload",
+    "authors": [
+        "Lee <leeblazek@gmail.com>"
+    ],
+    "moduleType": [
+        "amd",
+        "es6",
+        "globals",
+        "node",
+        "yui"
+    ],
+    "dependencies": {
+        "angular": "*"
+    },
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
