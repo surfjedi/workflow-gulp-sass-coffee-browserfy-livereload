@@ -13,8 +13,7 @@
         "yui"
     ],
     "dependencies": {
-        "angular": "*",
-        "bootstrap": "~3.2.0"
+        "angular": "*"
     },
     "license": "MIT",
     "private": true,
@@ -24,5 +23,8 @@
         "bower_components",
         "test",
         "tests"
-    ]
+    ],
+    "devDependencies": {
+        "bootstrap-sass-official": "~3.2.0"
+    }
 }

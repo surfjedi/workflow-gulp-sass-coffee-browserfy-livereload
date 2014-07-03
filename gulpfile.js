@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     jsonminify = require('gulp-jsonminify'),
     imagemin = require('gulp-imagemin'),
     pngcrush = require('imagemin-pngcrush'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    gulpBowerFiles = require('gulp-bower-files');
 
 var env,
     coffeeSources,
@@ -61,6 +62,14 @@ gulp.task('js', function() {
         .pipe(gulp.dest(outputDir + 'js'))
         .pipe(connect.reload())
 });
+
+// gulp.task("bower-files", function() {
+//     gulpBowerFiles(paths: {
+//         bowerDirectory: './bower_components',
+//         // bowerrc: 'path/for/.bowerrc',
+//         bowerJson: 'bower.json'
+//     }).pipe(gulp.dest("./"));
+// });
 
 gulp.task('compass', function() {
     gulp.src(sassSources)
